@@ -13,14 +13,12 @@
             <td>
                 <label for="name">Enter name</label>
                 <input type="text" th:field="*{name}" id="name" required/>
-                <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">name error</div>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="surname">Enter surname</label>
                 <input type="text" th:field="*{surname}" id="surname"/>
-                <div th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">surname error</div>
             </td>
         </tr>
         <br>
@@ -28,15 +26,13 @@
             <td>
                 <label for="age">Enter age</label>
                 <input type="number" min="0" max="127" th:field="*{age}" id="age">
-                <div th:if="${#fields.hasErrors('age')}" th:errors="*{age}">age error</div>
-            </td>
+           </td>
         </tr>
         <br>
         <tr>
             <td>
                 <label for="email">Enter email</label>
                 <input type="text" th:field="*{email}" id="email" required/>
-                <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email error</div>
             </td>
         </tr>
         <br>

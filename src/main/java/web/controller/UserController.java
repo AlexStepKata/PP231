@@ -38,7 +38,7 @@ public class UserController {
     }
 
     @PostMapping("/new")
-    public String add(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
+    public String add(@ModelAttribute("user") User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "create";
         } else {
@@ -58,14 +58,14 @@ public class UserController {
         model.addAttribute(userService.getUserById(id));
         return "edit";
     }
-//
-//    @PatchMapping("/edit")
-//    public String update(@Valid User user, BindingResult bindingResult) {
-//        if (bindingResult.hasErrors()) {
-//            return "edit";
-//        } else {
-//            userService.updateUser(user);
-//            return "redirect:/";
-//        }
-//    }
+
+    @PatchMapping("/edit")
+    public String update(@ModelAttribute("user") User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "edit";
+        } else {
+            userService.updateUser(user);
+            return "redirect:/";
+        }
+    }
 }
